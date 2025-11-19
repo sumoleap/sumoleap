@@ -16,8 +16,22 @@
 
   <!-- Your custom styles -->
   <link rel="stylesheet" href="/styles.css">
+  
+   <script>window.dataLayer = window.dataLayer || [];</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWXX8P');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWXX8P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- Logo Header -->
   <header class="absolute top-0 left-0 right-0 px-6 py-6 z-10">
@@ -226,9 +240,16 @@
         });
 
         if (response.ok) {
-          form.reset();
-          alert('Thanks! I’ll get back to you shortly.');
-        } else {
+  // Fire GTM event
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'form_submit_success',
+    formId: 'contactForm'
+  });
+
+  form.reset();
+  alert('Thanks! I’ll get back to you shortly.');
+} else {
           alert('Something went wrong. Please try again or email me directly.');
         }
       } catch (error) {
